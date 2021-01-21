@@ -7,13 +7,9 @@ h2,
 h3,
 p,
 blockquote,
-pre,
-a,
-img,
 ul,
 li,
 footer,
-header,
 section {
     margin: 0;
     padding: 0;
@@ -21,11 +17,6 @@ section {
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
-}
-
-body {
-    line-height: 1;
-    font-size: 1rem;
 }
 
 ol,
@@ -49,8 +40,8 @@ html {
 
 
 body {
-
-
+    line-height: 1;
+    font-size: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -62,34 +53,34 @@ body {
 
 /* Headings & text */
 
-.box-headings {
+.headings {
     font-weight: 400;
     font-size: 1.2rem;
     margin: 1.2rem 0 1.5rem;
 }
 
-.subscription-heading {
+.main-heading {
     font-weight: 700;
     font-size: 1.5rem;
     color: hsl(179, 62%, 43%);
 }
 
-.subscription-guarantee {
+.guarantee {
     color: hsl(71, 73%, 54%);
     font-size: 1.1rem;
     margin: 1rem 0;
 }
 
-.subscription-cost-offer {
+.price-offer {
     color: white;
     font-size: 1rem;
     margin: 0.9rem 0;
 }
 
-h1 {
+.price {
     font-size: 2rem;
     font-weight: 700;
-    margin: 0 0 1rem;
+
 }
 
 span {
@@ -97,6 +88,7 @@ span {
     font-size: 1rem;
     opacity: 0.8;
     letter-spacing: 1px;
+    margin: 0 0 0 0.5rem;
 }
 
 p {
@@ -106,7 +98,7 @@ p {
     line-height: 2;
 }
 
-.why-us-reasons {
+.why-us {
     font-size: 0.8rem;
     font-weight: 400;
     opacity: 0.8;
@@ -116,10 +108,10 @@ p {
 
 /* layout */
 
-.subscription-box {
+.price-box {
 
     margin: 2rem;
-    max-height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     background-color: white;
@@ -128,14 +120,20 @@ p {
     box-shadow: 0px 8px 3px 14px rgba(0, 0, 0, 0.01);
 }
 
-.layout-box {
+.layout-div {
     padding: 1rem 1rem 1.5rem 1.5rem;
 
 }
 
-.subscription-cost {
+.cost {
     background-color: hsl(179, 62%, 43%);
     color: white;
+}
+
+.price-container {
+    display: flex;
+    align-items: center;
+    margin: 0 0 1rem;
 }
 
 button {
@@ -146,11 +144,13 @@ button {
     border: 1px solid hsl(71, 73%, 54%);
     border-radius: 4px;
     margin: 1.5rem 0 1rem;
-    flex-wrap: nowrap;
     box-shadow: 0px 10px 45px -8px rgba(0, 0, 0, 0.40);
+    transition-property: box-shadow;
+    transition-duration: 0.5s;
 }
 
-button:hover {
+button:hover,
+button:focus {
     box-shadow: 0px 10px 45px -8px rgba(0, 0, 0, 0.70);
 
 }
@@ -172,10 +172,11 @@ button:hover {
     }
 
 
-    .subscription-box {
-        margin: auto 2rem;
-        min-width: 40rem;
-        max-width: 40%;
+    section.price-box {
+        margin: 2rem 2rem;
+        min-width: 500px;
+        max-width: 60%;
+        min-height: 40%;
         justify-content: flex-end;
         flex-direction: row;
         flex-wrap: wrap;
@@ -183,12 +184,12 @@ button:hover {
     }
 
 
-    .subscription-join-box {
+    .join-invite {
 
         flex: 2 1 100%;
     }
 
-    .subscription-cost,
+    .cost,
     .about-us {
         flex: 1 1 50%;
     }
